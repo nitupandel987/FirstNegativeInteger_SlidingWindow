@@ -1,0 +1,30 @@
+package dataStructures;
+
+public class FirstNegativeNumberSlidingWindow {
+	static void FirstNegative(int arr[], int k, int n) {
+	
+		boolean flag;
+		 
+		for(int i = 0; i < (n-k+1); i++) {
+			flag = false;
+			for(int j = 0; j < k ; j ++) {
+				if(arr[i+j] < 0) {
+					System.out.println(arr[i+j] + " ");
+					flag = true;
+					break;
+				}
+			}
+			if(!flag)
+				System.out.println( 0 + " ");
+		}
+		 
+		
+	}
+
+	public static void main(String args[]) {
+		int arr[] = {1,4,-2,-7,10,5,-6,9};
+		int k = 3;
+		int n = arr.length;
+		FirstNegative(arr,k,n);
+	}
+}
